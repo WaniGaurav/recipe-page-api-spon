@@ -1,0 +1,214 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  /* Light Theme */
+  :root {
+    --bg: #f0f2f5;
+    --text: #222;
+    --header-bg: linear-gradient(to right, #ff6f61, #ff9472);
+    --card-bg: white;
+    --input-bg: white;
+    --input-text: #333;
+    --button-bg: white;
+    --button-text: #ff6f61;
+    --button-border: #ff6f61;
+    --button-hover-bg: #ff6f61;
+    --button-hover-text: white;
+    --details-bg: #f9f9f9;
+  }
+  
+  /* Dark Theme */
+  [data-theme="dark"] {
+    --bg: #121212;
+    --text: #f0f0f0;
+    --header-bg: #1f1f1f;
+    --card-bg: #1e1e2e;
+    --input-bg: #2a2a3b;
+    --input-text: #f0f0f0;
+    --button-bg: #2a2a3b;
+    --button-text: #f0f0f0;
+    --button-border: #f0f0f0;
+    --button-hover-bg: #ff6f61;
+    --button-hover-text: white;
+    --details-bg: #222;
+  }
+  
+  /* Header */
+  header {
+    background: var(--header-bg);
+    padding: 2rem 1rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    color: var(--text);
+  }
+  
+  header input {
+    padding: 0.7rem 1rem;
+    margin-top: 1rem;
+    width: 80%;
+    max-width: 400px;
+    border: none;
+    border-radius: 25px;
+    background-color: var(--input-bg);
+    color: var(--input-text);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  
+  #toggle-theme {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 2px solid var(--button-border);
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  
+  #toggle-theme:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+  }
+  
+  #categories {
+    margin-top: 1.5rem;
+  }
+  
+  #categories button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 2px solid var(--button-border);
+    border-radius: 25px;
+    padding: 0.5rem 1.2rem;
+    margin: 0.5rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+  }
+  
+  #categories button:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+  }
+  
+  /* Recipe Grid */
+  #recipe-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem;
+  }
+  
+  /* Recipe Card */
+  .recipe-card {
+    background-color: var(--card-bg);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+  }
+  
+  .recipe-card h2 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .recipe-card p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    height: 60px;
+    overflow: hidden;
+  }
+  
+  /* View Button */
+  .recipe-card button {
+    padding: 0.5rem 1rem;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 2px solid var(--button-border);
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+  }
+  
+  .recipe-card button:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+  }
+
+  .copy-btn {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: 2px solid var(--button-border);
+    border-radius: 20px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .copy-btn:hover {
+    background-color: var(--button-hover-bg);
+    color: var(--button-hover-text);
+  }
+  
+  
+  /* Recipe Details */
+  .recipe-details {
+    margin-top: 1rem;
+    background-color: var(--details-bg);
+    padding: 1rem;
+    border-radius: 10px;
+    display: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .recipe-details h3 {
+    margin: 0.5rem 0;
+    color: var(--button-hover-bg);
+  }
+  
+  .recipe-details ul {
+    padding-left: 1.2rem;
+    list-style: disc;
+  }
+  
+  .recipe-details p {
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+  
+  .visible {
+    display: block;
+    max-height: 1000px; /* full content */
+    opacity: 1;
+    margin-top: 1rem;
+  }
+  
+  .hidden {
+    max-height: 0;
+    opacity: 0;
+    margin-top: 0;
+  }
+  
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    header input {
+      width: 100%;
+    }
+  }

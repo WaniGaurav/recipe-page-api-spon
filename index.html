@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recipe Page</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h1>Recipe Page</h1>
+        <input type="text" id="search" placeholder="Search recipes...">
+        <button id="toggle-theme">🌙 Dark Mode</button>
+        <div id="categories">
+          <button class="categorie" data-category="all">All</button>
+          <button class="categorie" data-category="dessert">Dessert</button>
+        </div>
+    </header>
+  <main id="recipe-list">
+    <!-- Recipes will be dynamically inserted here -->
+  </main>
+  <script type="module" src="/main.js"></script>
+</body>
+</html>
